@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel = "icon" href = "https://mycamerajournal.files.wordpress.com/2012/03/rubiks-cube-1.jpg?w=1880" 
+        type = "image/x-icon">
+       
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align:center">
+          <h2>Casac registraion form</h2>
+          <p>Join and enjoy this session.</p>
+        </div>
+        <div class="row">
+          
+          <div class="column">
+            <form id="submit-form" action="">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="name" placeholder="Enter your name" required>
+              <label for="lname">Email</label>
+              <input type="text" id="Email" name="email" placeholder="Enter your valid E-mail" required>
+              <label for="Department">Department</label>
+              <input type="text" id="Department" name="Department" placeholder="Your Department" required>
+              <label for="Department">Semester</label>
+              <input type="text" id="Semester" name="Semester" placeholder="Your Semester" required>
+
+              
+              <label for="program">Programs</label>
+              <select id="country" name="color">
+                <option value="Puzzle">Puzzle solution</option>
+                <option value="Webpage">Webpage designing</option>
+                <option value="Essay">Essay writing</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Coding">Coding</option>
+              </select>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+          <div class="column">
+            <img src="3.png" style="width:100% " > 
+            
+          </div>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbypP0tM-rmZ6hVqETTwA6yKk1EcdBkrWorVRdGpIDw76sR6zNdpGLoaEvyo98_5rWbgyQ/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Thank you.Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+</body>
+</html>
